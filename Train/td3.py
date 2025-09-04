@@ -31,7 +31,7 @@ def linear_schedule(initial_value: float) -> Callable[[float], float]:
 
 
 def train(threshold_pos:float=0.001, threshold_ori:float=np.deg2rad(6), 
-          action_type:str='pos_only', wandb_logging:bool=True, tensorboard_logging:bool=True, render_mode:str='None', verbose:int=0):
+          action_type:str='pos_only', wandb_logging:bool=True, tensorboard_logging:bool=True, render_mode:str=None, verbose:int=0):
     """Train the TD3 model with the specified parameters.
     Args:
         threshold_pos (float): The position threshold for the environment.
@@ -53,7 +53,7 @@ def train(threshold_pos:float=0.001, threshold_ori:float=np.deg2rad(6),
         assert tensorboard_logging, "To use wandb-logging, you must set tensorboard-logging to True and be logged into wandb."
         wandb.init(project="Test", name = (f'{train_date}-{action_type}-{threshold_pos}-{threshold_ori}'),sync_tensorboard=True, save_code=True)  # Initialize W&B
 
-    env = gym.make('gym_fracture:fracsurg-v0', 
+    env = gym.make('gym_fracture:anklesurg-v0', 
                    reward_type='sparse', 
                    max_steps=100, 
                    horizon='variable', 
@@ -116,9 +116,9 @@ if __name__ == "__main__":
     parser.add_argument('--threshold_pos', type=float, default=0.005, help='Position threshold for the environment.')
     parser.add_argument('--threshold_ori', type=float, default=0.05, help='Orientation threshold for the environment.')
     parser.add_argument('--action_type', type=str, default='fouractions', help='Type of action to use in the environment.')
-    parser.add_argument('--wandb-logging', type=bool, default=True, help='Enable or disable Weights & Biases logging. Must set tensorboard-logging to True and logged into wandb.')
+    parser.add_argument('--wandb-logging', type=bool, default=False, help='Enable or disable Weights & Biases logging. Must set tensorboard-logging to True and logged into wandb.')
     parser.add_argument('--tensorboard-logging', type=bool, default=True, help='Enable or disable TensorBoard logging.')
-    parser.add_argument('--render_mode', type=str, default='None', help='Render mode for the environment.')
+    parser.add_argument('--render_mode', type=str, default=None, help='Render mode for the environment.')
     parser.add_argument('--verbose', type=int, default=0, help='Verbosity level for logging.')
     args = parser.parse_args()
 

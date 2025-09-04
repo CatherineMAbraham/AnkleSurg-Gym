@@ -55,12 +55,12 @@ def getGoal(self, fracturestart, fractureorientaionDeg):
     if self.action_type == 'fouractions':
         self.goal_ori_low[1] =np.radians(fractureorientaionDeg[1] - 0)
         self.goal_ori_high[1] =np.radians(fractureorientaionDeg[1]+0)    
-    
-    self.goal_pos = np.round(goal_pos,3)
+    self.goal_pos = goal_pos
+
     ori = np.array(self.np_random.uniform(self.goal_ori_low, self.goal_ori_high))
-    goal_ori = np.array(p.getQuaternionFromEuler(ori))
+    self.goal_ori = np.array(p.getQuaternionFromEuler(ori))
     #goal_ori = R.from_euler('xyz', ori).as_quat()
-    self.goal_ori = np.round(goal_ori,3)
+    
 
 
 def getStarts(self):

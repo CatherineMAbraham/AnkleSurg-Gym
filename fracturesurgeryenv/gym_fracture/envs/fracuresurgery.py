@@ -28,7 +28,7 @@ class fracturesurgery_env(gym.Env):
                distance_threshold_pos (float): The position distance threshold for success.
                distance_threshold_ori (float): The orientation distance threshold for success.
                max_steps (int): The maximum number of steps per episode.
-               obs_type (str): The type of observation space ('dict' or 'Flat').
+               obs_type (str): The type of observation space ('dict' or 'flat').
                goal_type (str): The type of goal ('random' or 'fixed').
                dv (float): The action multiplier for the action space.
                action_type (str): The type of action space ('sixactions', 'fouractions', 'pos_only', or 'ori_only').
