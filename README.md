@@ -1,15 +1,15 @@
-# Frac-Surg-Gym
+# AnkleSurg-Gym
 An environment for training a RL agent to perform ankle fracture reduction surgery. 
 ![image of the environment.](https://github.com/CatherineMAbraham/Frac-Surg-Gym/blob/main/img/simwithcube.png)
 # Installation
 ## From Source 
 ```
-git clone https://github.com/CatherineMAbraham/Frac-Surg-Gym.git
+git clone https://github.com/CatherineMAbraham/AnkleSurg-Gym.git
 cd Frac-Surg-Gym
 ```
 ## Create Conda Environment
 ```
-conda create -n fracsurg python=3.10 -y
+conda create -n anklesurg python=3.10 -y
 ```
 ## Install Dependencies and Environment 
 ```
@@ -21,7 +21,7 @@ The environment can be loaded using Gymnasium's `gym.make()` function. This show
 ```
 import gymnasium as gym
 
-env = gym.make('gym_fracture:fracsurg-v0')
+env = gym.make('gym_fracture:anklesurg-v0')
 
 observation,_ = env.reset()
 
