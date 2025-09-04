@@ -5,7 +5,7 @@ An environment for training a RL agent to perform ankle fracture reduction surge
 ## From Source 
 ```
 git clone https://github.com/CatherineMAbraham/AnkleSurg-Gym.git
-cd Frac-Surg-Gym
+cd AnkleSurg-Gym
 ```
 ## Create Conda Environment
 ```
