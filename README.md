@@ -10,10 +10,12 @@ cd AnkleSurg-Gym
 ## Create Conda Environment
 ```
 conda create -n anklesurg python=3.10 -y
+conda activate anklesurg
 ```
 ## Install Dependencies and Environment 
 ```
 pip install -r requirements.txt
+cd fracturesurgeryenv
 pip install -e .
 ```
 # Usage
@@ -37,7 +39,8 @@ env.close()
 ## Agent Training 
 To recreate the agent tested in the paper, you can run the following from the command line, changing the arguments to test different paramaters. 
 ```
- python Train/td3.py --threshold_pos 0.005 --threshold_ori 0.05 --action_type fouractions --wandb-logging True --tensorboard-logging True --render_mode None --verbose 0
+cd ..
+python Train/td3.py --threshold_pos 0.005 --threshold_ori 0.05 --action_type fouractions --wandb-logging True --tensorboard-logging True --render_mode None --verbose 0
 ```
 # Environment Information
 ## Action Space 
