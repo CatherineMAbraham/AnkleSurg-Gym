@@ -1,6 +1,6 @@
 # AnkleSurg-Gym
 An environment for training a RL agent to perform ankle fracture reduction surgery. 
-![image of the environment.]([https://github.com/CatherineMAbraham/AnkleSurg-Gym/blob/main/img/6dofagent.gif])
+![image of the environment.](./img/6dofagent.gif)
 # Installation
 ## From Source 
 ```
