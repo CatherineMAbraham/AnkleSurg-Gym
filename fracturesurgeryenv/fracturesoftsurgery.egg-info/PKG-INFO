@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: fracturesoftsurgery
+Version: 0.0.1
+Summary: A OpenAI Gym Env for Fracture Surgery
+Requires-Dist: gymnasium
+Dynamic: requires-dist
+Dynamic: summary
