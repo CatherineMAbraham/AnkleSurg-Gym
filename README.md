@@ -53,3 +53,44 @@ The environment defaults and configuration options are summarized below:
 ---
 
 ## Installation
+## From Source 
+```
+git clone https://github.com/CatherineMAbraham/AnkleSurg-Gym.git
+cd AnkleSurg-Gym
+```
+## Create Conda Environment
+```
+conda create -n anklesurg python=3.10 -y
+conda activate anklesurg
+```
+## Install Dependencies and Environment 
+```
+cd fracturesurgeryenv
+pip install -e .
+```
+### Prerequisites
+- Python 3.8+
+- PyBullet
+- NumPy, SciPy, Matplotlib
+
+# Usage
+The environment can be loaded using Gymnasium's `gym.make()` function. This shows a basic usage with random actions, this can be replaced with any RL algorithm that utlisies the Open AI Gym Structure. 
+```
+import gymnasium as gym
+
+env = gym.make('gym_fracture:anklesurg-v0')
+
+observation,_ = env.reset()
+
+for _ in range(1000):
+    action = env.action_space.sample() # Take a random action in the action space 
+    observation, reward, terminated, truncated, info = env.step(action)
+
+    if done or truncated:
+        observation, _ = env.reset()
+
+env.close()
+```
+
+
+
